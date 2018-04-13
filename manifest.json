@@ -1,0 +1,25 @@
+{
+  "name": "Image Downloader for Yahoo Auctions JP ",
+  "description": "Downloads images from Yahoo Auctions JP",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+	"downloads"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": { "16": "b16.png",
+           "48": "b48.png",
+          "128": "b128.png" },
+  "content_scripts": [ {
+      "js": [ "/main.js" ],
+      "matches": [ "https://page.auctions.yahoo.co.jp/jp/auction/*" ],
+	  "run_at":"document_idle"
+   } ],
+  "browser_action": {
+    "default_title": "Image Downloader"
+  },
+  "manifest_version": 2
+}
